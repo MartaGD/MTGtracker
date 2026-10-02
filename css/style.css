@@ -1,0 +1,292 @@
+:root {
+  --ink: #17352c;
+  --muted: #577166;
+  --green: #188458;
+  --paper: #f4f4e9;
+  --line: #b8d2c0;
+  --card: #fffef9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.45;
+}
+
+.heading-font {
+  font-family: "Fraunces", serif;
+}
+
+.app-wrapper {
+  width: 100%;
+}
+
+/* Boton principal */
+#next-button {
+  color: #ffffff;
+  background: var(--green);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+#next-button:hover {
+  filter: brightness(0.95);
+}
+
+#next-button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* Timeline */
+.turn-track {
+  position: relative;
+}
+
+.turn-track::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 19px;
+  width: 2px;
+  background: var(--line);
+}
+
+.step {
+  position: relative;
+  padding-left: 54px;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 11px;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--green);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.step.major::before,
+.step.current-step::before {
+  background: var(--green);
+  box-shadow: 0 0 0 5px #dcebdc;
+}
+
+/* Cabecera de cada paso */
+.step-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 18px;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid #d9e4d8;
+  border-radius: 14px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.major .step-button {
+  background: #e0efe2;
+  border-color: #b3d5bd;
+}
+
+.step-button:hover,
+.step.current-step .step-button {
+  transform: translateX(3px);
+  border-color: var(--green);
+}
+
+.step.current-step .step-button {
+  box-shadow: 0 0 0 4px #d5eee0;
+}
+
+.step-button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.step-button[aria-expanded="true"] {
+  border-color: var(--green);
+  border-radius: 14px 14px 0 0;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.step-button[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Panel desplegable */
+.step-panel {
+  padding: 0 18px 17px;
+  background: var(--card);
+  border: 1px solid var(--green);
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+}
+
+.step-panel p {
+  margin: 0;
+  padding-top: 14px;
+  color: var(--muted);
+}
+
+/* Secuencias */
+.sequence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  padding-top: 15px;
+  border-top: 1px solid #e4ebe1;
+}
+
+.sequence span {
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: #edf4ec;
+}
+
+.sequence span + span::before {
+  content: "→";
+  margin-right: 12px;
+  color: #749382;
+  font-weight: 700;
+}
+
+.sequence .priority {
+  background: #d5eee0;
+  color: #07583a;
+  font-weight: 700;
+}
+
+/* Pagina de glosario */
+.glossary-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.glossary-card {
+  padding: 20px;
+  border: 1px solid #d9e4d8;
+  border-radius: 14px;
+  background: var(--card);
+}
+
+.glossary-card h2 {
+  margin: 0;
+}
+
+.glossary-card p {
+  margin: 8px 0 0;
+  color: var(--ink);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.glossary-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.glossary-table th,
+.glossary-table td {
+  border: 1px solid #d9e4d8;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.glossary-table th {
+  background: #e7f1e8;
+}
+
+.flow {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px dashed #b3d5bd;
+  border-radius: 10px;
+  background: #f6fbf7;
+  font-weight: 600;
+  color: #0f5a3a;
+}
+
+.glossary-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.glossary-list li + li {
+  margin-top: 8px;
+}
+
+/* Texto auxiliar */
+[role="status"] {
+  color: #07583a;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .turn-track::before {
+    left: 11px;
+  }
+
+  .step {
+    padding-left: 35px;
+  }
+
+  .step::before {
+    left: 3px;
+  }
+
+  .step-button {
+    padding: 13px;
+  }
+
+  .step-panel {
+    padding: 0 13px 14px;
+  }
+
+  .glossary-card {
+    padding: 16px;
+  }
+}
+
+/* Accesibilidad: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .step-button,
+  .chevron {
+    transition: none;
+  }
+
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+

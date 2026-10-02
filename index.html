@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fases del Turno MTG</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+</head>
+<body data-template-id="__page-root">
+  <div class="app-wrapper px-4 py-10 sm:px-8 sm:py-14">
+    <header class="mx-auto mb-10 max-w-3xl">
+      <p data-template-id="eyebrow" class="mb-3 font-bold uppercase tracking-[0.22em]">Guía rápida</p>
+      <h1 data-template-id="page-title" class="heading-font mb-4 leading-tight">Fases del turno en Magic: The Gathering</h1>
+      <p data-template-id="intro" class="max-w-2xl leading-relaxed">
+        Recorre cada paso del turno en orden. Puedes abrir cada bloque para ver la secuencia y usar "Siguiente paso" para avanzar de forma guiada.
+      </p>
+      <p class="mt-5">
+        <a class="inline-flex items-center rounded-full border border-[#b3d5bd] bg-white px-4 py-2 font-bold text-[#0f5a3a] transition hover:-translate-y-0.5 hover:border-[#188458]" href="glossary.html">Ver glosario rapido</a>
+      </p>
+    </header>
+
+    <main class="mx-auto max-w-3xl">
+      <div class="mb-6 ml-9 flex flex-wrap items-center gap-3 sm:ml-14">
+        <button id="next-button" data-template-id="next-button" class="inline-flex items-center gap-2 rounded-full px-5 py-3 font-bold shadow-sm transition hover:-translate-y-0.5" type="button">
+          <span data-template-id="next-button-label">Siguiente paso</span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <span data-template-id="turn-indicator" class="rounded-full bg-[#d5eee0] px-4 py-2" role="status">Listo para empezar</span>
+      </div>
+
+      <div class="turn-track space-y-3">
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="untap-panel">
+            <span data-template-id="untap-title" class="font-bold">Enderezar (Untap)</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="untap-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="untap-action">Endereza permanentes</span>
+              <span data-template-id="untap-priority">No hay prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="upkeep-panel">
+            <span data-template-id="upkeep-title" class="font-bold">Mantenimiento (Upkeep)</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="upkeep-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="upkeep-triggers">Triggers (in the upkeep...)</span>
+              <span data-template-id="upkeep-sba">SBA</span>
+              <span data-template-id="upkeep-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="draw-panel">
+            <span data-template-id="draw-title" class="font-bold">Robo (Draw)</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="draw-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="draw-action">Roba una carta</span>
+              <span data-template-id="draw-triggers">Triggers (when you draw a card...)</span>
+              <span data-template-id="draw-sba">SBA</span>
+              <span data-template-id="draw-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="main1-panel">
+            <span data-template-id="main1-title" class="font-bold">Primera fase principal(Main Phase 1)</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="main1-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="main1-playland">Jugar tierra de turno</span>
+              <span data-template-id="main1-sba">SBA</span>
+              <span data-template-id="main1-priority">Prioridad</span>
+
+            </div>
+            <div class="sequence">
+              <span data-template-id="main1-cast">Castear hechizos</span>
+              <span data-template-id="main1-sba">SBA</span>
+              <span data-template-id="main1-priority">Prioridad</span>
+            </div>
+            <div class="sequence">
+              <span data-template-id="main1-activateabilities">Activar habilidades</span>
+              <span data-template-id="main1-sba">SBA</span>
+              <span data-template-id="main1-priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="begin-panel">
+            <span data-template-id="begin-title" class="font-bold">Inicio de combate</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="begin-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="begin-triggers">Disparos de inicio de combate</span>
+              <span data-template-id="begin-sba">Acciones basadas en estado</span>
+              <span data-template-id="begin-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="attack-panel">
+            <span data-template-id="attack-title" class="font-bold">Declarar atacantes</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="attack-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="attack-action">Declarar atacantes</span>
+              <span data-template-id="attack-triggers">Disparos al atacar</span>
+              <span data-template-id="attack-sba">Acciones basadas en estado</span>
+              <span data-template-id="attack-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="block-panel">
+            <span data-template-id="block-title" class="font-bold">Declarar bloqueadoras</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="block-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="block-action">Declarar bloqueadoras</span>
+              <span data-template-id="block-triggers">Disparos al bloquear</span>
+              <span data-template-id="block-sba">Acciones basadas en estado</span>
+              <span data-template-id="block-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="damage-panel">
+            <span data-template-id="damage-title" class="font-bold">Daño de combate</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="damage-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="damage-action">Asignar y hacer daño</span>
+              <span data-template-id="damage-sba">Acciones basadas en estado</span>
+              <span data-template-id="damage-triggers">Disparos por daño</span>
+              <span data-template-id="damage-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="combatend-panel">
+            <span data-template-id="combatend-title" class="font-bold">Fin de combate</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="combatend-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="combatend-triggers">Disparos de fin de combate</span>
+              <span data-template-id="combatend-sba">Acciones basadas en estado</span>
+              <span data-template-id="combatend-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="main2-panel">
+            <span data-template-id="main2-title" class="font-bold">Segunda fase principal</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="main2-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="main2-priority" class="priority">Prioridad (nuevamente jugar tierra/hechizos)</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="end-panel">
+            <span data-template-id="end-title" class="font-bold">Paso final (End step)</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="end-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="end-triggers">Disparos de fin de turno</span>
+              <span data-template-id="end-sba">Acciones basadas en estado</span>
+              <span data-template-id="end-priority" class="priority">Prioridad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step">
+          <button class="step-button" type="button" aria-expanded="false" aria-controls="cleanup-panel">
+            <span data-template-id="cleanup-title" class="font-bold">Limpieza (Cleanup)</span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="cleanup-panel" class="step-panel" hidden>
+            <div class="sequence">
+              <span data-template-id="cleanup-damage">Remover daño marcado</span>
+              <span data-template-id="cleanup-effects">Terminan efectos "hasta fin de turno"</span>
+            </div>
+            <p data-template-id="cleanup-priority">Normalmente no hay prioridad aquí, salvo que algo se dispare o cambie el estado.</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="ml-9 mt-7 rounded-xl bg-[#17352c] px-5 py-4 text-center text-white sm:ml-14">
+        <p data-template-id="next-turn" class="font-bold">Después de limpieza, pasa el turno al oponente.</p>
+      </footer>
+
+      <p data-template-id="legend" class="ml-9 mt-5 leading-relaxed sm:ml-14">
+        Nota: "Prioridad" indica cuándo los jugadores pueden lanzar hechizos o activar habilidades.
+        </br>SBA = State Based Actions (acciones basadas en estado) el juego revisa automáticamente si hay algun cambio(por ejemplo, si un permanente tiene 0 de resistencia, se manda al cementerio).
+        </br>Triggers = Saltan habilidades disparadas por un evento.
+      </p>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

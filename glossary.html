@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glosario MTG</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+</head>
+<body>
+  <div class="app-wrapper px-4 py-10 sm:px-8 sm:py-14">
+    <header class="mx-auto mb-8 max-w-4xl">
+      <p class="mb-3 font-bold uppercase tracking-[0.22em]">Referencia rapida</p>
+      <h1 class="heading-font mb-4 leading-tight">Glosario basico de habilidades en Magic: The Gathering</h1>
+      <p class="max-w-3xl leading-relaxed">
+        Este glosario resume palabras clave comunes y las diferencias entre habilidades disparadas, activadas y de mana.
+      </p>
+      <p class="mt-5">
+        <a class="inline-flex items-center rounded-full border border-[#b3d5bd] bg-white px-4 py-2 font-bold text-[#0f5a3a] transition hover:-translate-y-0.5 hover:border-[#188458]" href="index.html">Volver a fases del turno</a>
+      </p>
+    </header>
+
+    <main class="mx-auto max-w-4xl glossary-layout">
+      <section class="glossary-card">
+        <h2 class="heading-font text-2xl">1. Habilidades de palabra clave</h2>
+        <p class="mt-3">Son keyword abilities: una palabra o expresion sustituye una explicacion de reglas mas larga. Aqui entran trample, deathtouch, ward y muchas otras.</p>
+
+        <div class="table-wrap mt-4">
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th>Palabra (ES)</th>
+                <th>Palabra (EN)</th>
+                <th>Que hace, simplificado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Volar</td><td>Flying</td><td>Solo puede ser bloqueada por criaturas con volar o alcance.</td></tr>
+              <tr><td>Alcance</td><td>Reach</td><td>Puede bloquear criaturas con volar.</td></tr>
+              <tr><td>Toque mortal</td><td>Deathtouch</td><td>Cualquier cantidad de dano que haga a una criatura es letal.</td></tr>
+              <tr><td>Vinculo vital</td><td>Lifelink</td><td>El controlador gana vida igual al dano hecho.</td></tr>
+              <tr><td>Arrollar</td><td>Trample</td><td>El dano de combate sobrante puede pasar al jugador o planeswalker defensor.</td></tr>
+              <tr><td>Prisa</td><td>Haste</td><td>Puede atacar o girarse para habilidades de inmediato.</td></tr>
+              <tr><td>Vigilancia</td><td>Vigilance</td><td>Atacar no hace que la criatura se gire.</td></tr>
+              <tr><td>Amenaza</td><td>Menace</td><td>Solo puede ser bloqueada por dos o mas criaturas.</td></tr>
+              <tr><td>Danar primero</td><td>First strike</td><td>Hace dano de combate antes del dano normal.</td></tr>
+              <tr><td>Danar dos veces</td><td>Double strike</td><td>Hace dano en el paso de danar primero y en el normal.</td></tr>
+              <tr><td>Defensor</td><td>Defender</td><td>No puede atacar.</td></tr>
+              <tr><td>Indestructible</td><td>Indestructible</td><td>No puede ser destruida.</td></tr>
+              <tr><td>Antimaleficio</td><td>Hexproof</td><td>No puede ser objetivo de hechizos/habilidades de oponentes.</td></tr>
+              <tr><td>Destello</td><td>Flash</td><td>Puedes lanzarlo como si fuera un instantaneo.</td></tr>
+              <tr><td>Proteccion</td><td>Protection</td><td>Evita ciertos efectos segun la cualidad protegida.</td></tr>
+              <tr><td>Ward / Rebatir</td><td>Ward</td><td>Aplicar objetivo requiere un coste adicional; si no se paga, se contrarresta.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-[#577166]">La lista oficial de Wizards incluye, entre otras, volar, alcance, toque mortal, arrollar, danar dos veces, prisa, vinculo vital y vigilancia.</p>
+      </section>
+
+      <section class="glossary-card">
+        <h2 class="heading-font text-2xl">2. Habilidades activadas</h2>
+        <p class="mt-3">Tienen estructura <strong>[coste]: [efecto]</strong>. Ejemplos: "Sacrifica esta criatura: roba una carta" o "{T}: Anade {G}".</p>
+        <p class="mt-3">Cuando la activas:</p>
+        <p class="flow">pagas el coste -> habilidad va a la pila -> prioridad -> resuelve</p>
+      </section>
+
+      <section class="glossary-card">
+        <h2 class="heading-font text-2xl">3. Habilidades disparadas</h2>
+        <p class="mt-3">Empiezan con "Cuando...", "Siempre que..." o "Al comienzo de...". Ejemplo: "Cuando esta criatura ataque, roba una carta".</p>
+        <p class="mt-3">No eliges activarlas; se disparan cuando pasa el evento:</p>
+        <p class="flow">evento -> habilidad se dispara -> se pone en la pila -> prioridad</p>
+      </section>
+
+      <section class="glossary-card">
+        <h2 class="heading-font text-2xl">4. Habilidades estaticas</h2>
+        <p class="mt-3">No se activan ni se disparan. Funcionan mientras se cumplan sus condiciones.</p>
+        <ul class="glossary-list mt-3">
+          <li><strong>Ejemplo:</strong> "Las otras criaturas que controlas obtienen +1/+1".</li>
+          <li><strong>Ejemplo:</strong> "Las criaturas que controlas tienen vigilancia".</li>
+        </ul>
+      </section>
+
+      <section class="glossary-card">
+        <h2 class="heading-font text-2xl">5. Acciones de palabra clave</h2>
+        <p class="mt-3">No son habilidades, son acciones definidas por reglas. Wizards distingue entre keyword abilities y keyword actions.</p>
+        <ul class="glossary-list mt-3">
+          <li>Exiliar</li>
+          <li>Sacrificar</li>
+          <li>Destruir</li>
+          <li>Descartar</li>
+          <li>Contrarrestar</li>
+          <li>Buscar</li>
+          <li>Barajar</li>
+          <li>Revelar</li>
+          <li>Luchar</li>
+          <li>Adivinar</li>
+          <li>Robar</li>
+        </ul>
+        <p class="mt-3 text-[#577166]"><strong>Importante:</strong> Toque mortal es habilidad de palabra clave; sacrificar es accion de palabra clave.</p>
+      </section>
+
+      <section class="glossary-card">
+        <h2 class="heading-font text-2xl">6. Ability words (palabras de habilidad)</h2>
+        <p class="mt-3">Son etiquetas en cursiva como Aterrizaje, Ferocidad, Metalcraft o Spell mastery. Agrupan cartas con un patron comun, pero la palabra en si no tiene reglas propias.</p>
+        <p class="mt-3"><strong>Ejemplo:</strong> "Aterrizaje - Siempre que una tierra entre al campo de batalla bajo tu control...".</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+
