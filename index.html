@@ -85,7 +85,6 @@
               <span data-template-id="main1-playland">Jugar tierra de turno</span>
               <span data-template-id="main1-sba">SBA</span>
               <span data-template-id="main1-priority">Prioridad</span>
-
             </div>
             <div class="sequence">
               <span data-template-id="main1-cast">Castear hechizos</span>
@@ -107,8 +106,8 @@
           </button>
           <div id="begin-panel" class="step-panel" hidden>
             <div class="sequence">
-              <span data-template-id="begin-triggers">Disparos de inicio de combate</span>
-              <span data-template-id="begin-sba">Acciones basadas en estado</span>
+              <span data-template-id="begin-triggers">Triggers (At the beginning of combat)</span>
+              <span data-template-id="begin-sba">SBA</span>
               <span data-template-id="begin-priority" class="priority">Prioridad</span>
             </div>
           </div>
@@ -122,8 +121,8 @@
           <div id="attack-panel" class="step-panel" hidden>
             <div class="sequence">
               <span data-template-id="attack-action">Declarar atacantes</span>
-              <span data-template-id="attack-triggers">Disparos al atacar</span>
-              <span data-template-id="attack-sba">Acciones basadas en estado</span>
+              <span data-template-id="attack-triggers">Triggers (Whenever XXX attacks,)</span>
+              <span data-template-id="attack-sba">SBA<span>
               <span data-template-id="attack-priority" class="priority">Prioridad</span>
             </div>
           </div>
@@ -137,8 +136,8 @@
           <div id="block-panel" class="step-panel" hidden>
             <div class="sequence">
               <span data-template-id="block-action">Declarar bloqueadoras</span>
-              <span data-template-id="block-triggers">Disparos al bloquear</span>
-              <span data-template-id="block-sba">Acciones basadas en estado</span>
+              <span data-template-id="block-triggers">Triggers (Whenever this creature blocks)</span>
+              <span data-template-id="block-sba">SBA</span>
               <span data-template-id="block-priority" class="priority">Prioridad</span>
             </div>
           </div>
@@ -151,9 +150,9 @@
           </button>
           <div id="damage-panel" class="step-panel" hidden>
             <div class="sequence">
-              <span data-template-id="damage-action">Asignar y hacer daño</span>
-              <span data-template-id="damage-sba">Acciones basadas en estado</span>
-              <span data-template-id="damage-triggers">Disparos por daño</span>
+              <span data-template-id="damage-action">Asignar daño</span>
+              <span data-template-id="damage-sba">SBA</span>
+              <span data-template-id="damage-triggers">Trigger (Whenever this creature deals combat damage)</span>
               <span data-template-id="damage-priority" class="priority">Prioridad</span>
             </div>
           </div>
@@ -166,8 +165,8 @@
           </button>
           <div id="combatend-panel" class="step-panel" hidden>
             <div class="sequence">
-              <span data-template-id="combatend-triggers">Disparos de fin de combate</span>
-              <span data-template-id="combatend-sba">Acciones basadas en estado</span>
+              <span data-template-id="combatend-triggers">Triggers (At end of combat)</span>
+              <span data-template-id="combatend-sba">SBA</span>
               <span data-template-id="combatend-priority" class="priority">Prioridad</span>
             </div>
           </div>
@@ -175,12 +174,24 @@
 
         <section class="step">
           <button class="step-button" type="button" aria-expanded="false" aria-controls="main2-panel">
-            <span data-template-id="main2-title" class="font-bold">Segunda fase principal</span>
+            <span data-template-id="main2-title" class="font-bold">Segunda fase principal (Main Phase 2)</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </button>
           <div id="main2-panel" class="step-panel" hidden>
             <div class="sequence">
-              <span data-template-id="main2-priority" class="priority">Prioridad (nuevamente jugar tierra/hechizos)</span>
+              <span data-template-id="main1-playland">Jugar tierra de turno</span>
+              <span data-template-id="main1-sba">SBA</span>
+              <span data-template-id="main1-priority">Prioridad</span>
+            </div>
+            <div class="sequence">
+              <span data-template-id="main2-cast">Castear hechizos</span>
+              <span data-template-id="main2-sba">SBA</span>
+              <span data-template-id="main2-priority">Prioridad</span>
+            </div>
+            <div class="sequence">
+              <span data-template-id="main2-activateabilities">Activar habilidades</span>
+              <span data-template-id="main2-sba">SBA</span>
+              <span data-template-id="main2-priority">Prioridad</span>
             </div>
           </div>
         </section>
@@ -192,8 +203,8 @@
           </button>
           <div id="end-panel" class="step-panel" hidden>
             <div class="sequence">
-              <span data-template-id="end-triggers">Disparos de fin de turno</span>
-              <span data-template-id="end-sba">Acciones basadas en estado</span>
+              <span data-template-id="end-triggers">Triggers (At the end of end step)</span>
+              <span data-template-id="end-sba">SBA</span>
               <span data-template-id="end-priority" class="priority">Prioridad</span>
             </div>
           </div>
