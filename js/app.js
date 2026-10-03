@@ -44,15 +44,6 @@ function openStep(button) {
   setExpanded(button, true);
 }
 
-function toggleStep(button) {
-  const isExpanded = button.getAttribute("aria-expanded") === "true";
-  if (isExpanded) {
-    setExpanded(button, false);
-  } else {
-    openStep(button);
-  }
-}
-
 function setCurrentStepByElement(step) {
   if (!step) return;
 
@@ -62,13 +53,29 @@ function setCurrentStepByElement(step) {
   updateIndicator();
 }
 
-stepButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const step = button.closest(".step");
-    if (!step) return;
+function activateStep(step, { scroll = false } = {}) {
+  if (!step) return;
 
-    setCurrentStepByElement(step);
-    toggleStep(button);
+  setCurrentStepByElement(step);
+
+  const button = step.querySelector(".step-button");
+  if (button) {
+    openStep(button);
+  }
+
+  if (scroll) {
+    step.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+}
+
+steps.forEach((step) => {
+  step.addEventListener("click", (event) => {
+    // Evita forzar reapertura al interactuar con el contenido interno del panel.
+    if (event.target.closest(".step-panel")) return;
+    activateStep(step);
   });
 });
 
@@ -76,23 +83,9 @@ if (nextButton) {
   nextButton.addEventListener("click", () => {
     if (steps.length === 0) return;
 
-    steps[current]?.classList.remove("current-step");
-    current = (current + 1) % steps.length;
-
-    const step = steps[current];
-    step.classList.add("current-step");
-
-    const button = step.querySelector(".step-button");
-    if (button) {
-      openStep(button);
-    }
-
-    updateIndicator();
-
-    step.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
+    const nextIndex = (current + 1) % steps.length;
+    const nextStep = steps[nextIndex];
+    activateStep(nextStep, { scroll: true });
   });
 }
 
