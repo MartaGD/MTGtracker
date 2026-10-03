@@ -11,9 +11,9 @@ module.exports = merge(common, {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'img', to: 'img' },
+        { from: 'img', to: 'img', noErrorOnMissing: true },
         { from: 'css', to: 'css' },
-        { from: 'js/vendor', to: 'js/vendor' },
+        { from: 'js/vendor', to: 'js/vendor', noErrorOnMissing: true },
         { from: 'icon.svg', to: 'icon.svg' },
         { from: 'favicon.ico', to: 'favicon.ico' },
         { from: 'robots.txt', to: 'robots.txt' },
@@ -22,6 +22,6 @@ module.exports = merge(common, {
         { from: 'glossary.html', to: 'glossary.html' },
         { from: 'site.webmanifest', to: 'site.webmanifest' },
       ],
-    }),
+    })
   ],
 });
